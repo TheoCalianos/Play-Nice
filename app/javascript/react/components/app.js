@@ -1,7 +1,12 @@
 import React from 'react'
-
+import 'babel-polyfill';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import GroupsContainer from '../container/GroupsContainer';
 export const App = (props) => {
-  return (<h1>Make It So React</h1>)
-}
+  return (
+    <Router history={browserHistory}>
+      <Route path='/' component={GroupsContainer} />
+    </Router>
+  )}
 
 export default App
