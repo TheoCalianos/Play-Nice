@@ -20,7 +20,8 @@ ActiveRecord::Schema.define(version: 2018_10_29_181521) do
     t.string "title", null: false
     t.string "description", null: false
     t.string "game", null: false
-    t.string "time", null: false
+    t.string "start_date", null: false
+    t.string "end_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -5,3 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Group.new(location: "boston", title: "cool gusy meet up", description: "only cool poeple allowed", game: "coolest game", start_date: "11/11/11", end_date: "11/11/12")
