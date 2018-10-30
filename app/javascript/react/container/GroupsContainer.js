@@ -4,7 +4,8 @@ class GroupsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      groupsList: []
+      groupsList: [],
+      charitiesList: []
     }
   }
   componentDidMount() {
@@ -25,16 +26,24 @@ class GroupsContainer extends Component {
   }
   render() {
     let groupsList = this.state.groupsList.map(group => {
+       let names = ""
+       group.charities.forEach((charity)=> {
+         names = names + `${charity.name} `
+       })
     return (
       <GroupTile
         key = {group.id}
         id = {group.id}
+        names = {names}
         title = {group.title}
         location = {group.location}
         createdAt = {group.created_at}
         description = {group.description}
         game = {group.game}
-        time = {group.time}
+        startDate = {group.start_date}
+        endDate = {group.start_date}
+        donatedAmount = {group.donated_amount}
+
       />
     )
   })

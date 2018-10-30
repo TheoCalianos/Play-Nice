@@ -7,6 +7,7 @@ class Groups < ActiveRecord::Migration[5.2]
       t.string :game, null: false
       t.string :start_date, null: false
       t.string :end_date, null: false
+      t.string :donated_amount, numericality: true , null: false
 
       t.timestamps null: false
     end
