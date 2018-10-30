@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_29_181521) do
+ActiveRecord::Schema.define(version: 2018_10_30_174257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "charities", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "url", null: false
+    t.string "description", null: false
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string "location", null: false
@@ -22,8 +28,16 @@ ActiveRecord::Schema.define(version: 2018_10_29_181521) do
     t.string "game", null: false
     t.string "start_date", null: false
     t.string "end_date", null: false
+    t.string "donated_amount", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "sponsers", force: :cascade do |t|
+    t.bigint "group_id"
+    t.bigint "charity_id"
+    t.index ["charity_id"], name: "index_sponsers_on_charity_id"
+    t.index ["group_id"], name: "index_sponsers_on_group_id"
   end
 
   create_table "users", force: :cascade do |t|
