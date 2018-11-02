@@ -1,0 +1,12 @@
+.user-name{
+  color:white;
+  padding-top: .5rem;
+}
+
+.feild-hidden{
+  visibility: hidden;
+}
+
+.botton-hidden{
+  visibility: hidden;  
+}
