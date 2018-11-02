@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GroupTile from '../components/GroupTile'
+import { Link } from 'react-router'
 class GroupsContainer extends Component {
   constructor(props) {
     super(props);
@@ -41,14 +42,20 @@ class GroupsContainer extends Component {
         description = {group.description}
         game = {group.game}
         startDate = {group.start_date}
-        endDate = {group.start_date}
+        endDate = {group.end_date}
         donatedAmount = {group.donated_amount}
 
       />
     )
   })
     return (
-      <h1>{groupsList}</h1>
+      <div>
+      <h1>Play Nice</h1>
+        <div>
+          <p className = "group-tiles">{groupsList}</p>
+        </div>
+        <p><Link to='group/new'> New Group</Link></p>
+      </div>
       )
     }
   }
