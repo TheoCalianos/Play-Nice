@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import GroupTile from '../components/GroupTile'
 import { Link } from 'react-router'
+import GoogleMapReact from 'google-map-react';
 class GroupsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+    center: {
+      lat: 59.95,
+      lng: 30.33},
+      zoom: 15,
       groupsList: [],
       charitiesList: []
     }
@@ -44,16 +49,17 @@ class GroupsContainer extends Component {
         startDate = {group.start_date}
         endDate = {group.end_date}
         donatedAmount = {group.donated_amount}
+        zoom =  {this.state.zoom}
+        lat = {Number.parseFloat(group.lat)}
+        lng = {Number.parseFloat(group.lng)}
 
       />
     )
   })
     return (
       <div>
-      <h1>Play Nice</h1>
-        <div>
-          <p className = "group-tiles">{groupsList}</p>
-        </div>
+        <h1>Play Nice</h1>
+        <div className = "group-tiles">{groupsList}</div>
         <p><Link to='group/new'> New Group</Link></p>
       </div>
       )

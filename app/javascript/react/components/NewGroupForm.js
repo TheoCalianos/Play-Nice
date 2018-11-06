@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 import Calendar from 'react-calendar';
-
+import LocationSearchInput from './LocationSearchInput'
+import PlacesAutocomplete, {
+  geocodeByAddress,
+  getLatLng,
+} from 'react-places-autocomplete';
 class NewGroupForm extends Component {
   constructor(props) {
     super(props);
@@ -9,6 +13,7 @@ class NewGroupForm extends Component {
       id: "",
       title: "",
       location: "",
+      geo_location: {},
       description: "",
       game: "",
       start_date: "",
@@ -19,13 +24,20 @@ class NewGroupForm extends Component {
     this.postNewGroup = this.postNewGroup.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleFormChange = this.handleFormChange.bind(this)
+    this.handleGeoLocation = this.handleGeoLocation.bind(this)
+    this.handleAddress = this.handleAddress.bind(this)
   }
+  handleAddress(address){
+    this.setState({ location:address});
+  };
 
+  handleGeoLocation(londlad){
+    this.setState({ geo_location:londlad })
+  }
 
   handleFormChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
-
   postNewGroup(payload) {
     fetch(`/api/v1/groups.json`, {
       method: 'POST',
@@ -37,7 +49,6 @@ class NewGroupForm extends Component {
     })
     .then(response => {
       if (response.ok) {
-        debugger;
         return response.json()
 
         .then(group => {
@@ -67,7 +78,9 @@ class NewGroupForm extends Component {
         game: this.state.game,
         start_date: this.state.start_date,
         end_date: this.state.end_date,
-        donated_amount: this.state.donated_amount
+        donated_amount: this.state.donated_amount,
+        lat: this.state.geo_location.lat,
+        lng: this.state.geo_location.lng
       };
       this.postNewGroup(payload);
   }
@@ -78,27 +91,46 @@ class NewGroupForm extends Component {
         <h1> Post A MEETUP GROUP! </h1>
 
         <form className="form" onChange={this.handleFormChange} onSubmit={this.handleSubmit}>
-
-          <label htmlFor="title">Name:</label>
+          <div className = "field">
+          <label>Name:</label>
           <input type="text" name="title" value={this.state.title}></input>
+          </div>
 
-          <label htmlFor="location">Location:</label>
-          <input type="text" name="location" value={this.state.location}></input>
-
-          <label htmlFor="game">Game:</label>
+          <div className = "field">
+          <label>Location:</label>
+          <LocationSearchInput
+           type="text"
+           name="location"
+           handleGeoLocation={this.handleGeoLocation}
+           handleAddress={this.handleAddress}
+           location = {this.state.location}
+           />
+          </div>
+          <div className = "field">
+          <label>Game:</label>
           <input type="text" name="game" value={this.state.game}></input>
+          </div>
 
-          <label htmlFor="description">Description:</label>
+          <div className = "field">
+          <label>Description:</label>
           <input type="text" name="description" value={this.state.description}></input>
+          </div>
 
-          <label htmlFor="start_date">First Day:</label>
+          <div className = "field">
+          <label>First Day:</label>
           <input  type="date" name="start_date"  value={this.state.start_date}/>
+          </div>
 
-          <label htmlFor="end_date">Last Day:</label>
+          <div className = "field">
+          <label>Last Day:</label>
           <input type="date" name="end_date" value={this.state.end_date}/>
+          </div>
 
-          <label htmlFor="donated_amount">Minimumn donation:</label>
+          <div className = "field">
+          <label>Minimumn donation:</label>
           <input type="text" name="donated_amount" value={this.state.donated_amount}></input>
+          </div>
+
 
           <input className="submitButton" type="submit" value="Submit" />
         </form>

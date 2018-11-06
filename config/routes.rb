@@ -10,6 +10,5 @@ Rails.application.routes.draw do
   end
   get '/groups/:id', to: 'homes#index'
   get '/group/new', to: 'homes#index'
-  get '/charity/new', to: 'homes#index'
   get '/groups/:id/charities/new', to: 'homes#index'
 end
