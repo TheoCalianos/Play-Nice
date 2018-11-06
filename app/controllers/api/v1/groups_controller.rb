@@ -10,7 +10,6 @@ class Api::V1::GroupsController < ApplicationController
   end
   def create
     newGroup = Group.new(group_params)
-
     if newGroup.save
       render json: newGroup
     else
@@ -18,6 +17,6 @@ class Api::V1::GroupsController < ApplicationController
     end
   end
   def group_params
-      params.require(:group).permit(:title, :location, :description, :game, :start_date, :end_date, :donated_amount)
+      params.require(:group).permit(:title, :location, :description, :game, :start_date, :end_date, :donated_amount, :lat, :lng)
   end
 end
