@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CharitiesTile from '../components/CharitiesTile'
+import AttendiesTile from '../components/AttendiesTile'
 class GroupsContainer extends Component {
   constructor(props) {
     super(props);
@@ -13,8 +14,10 @@ class GroupsContainer extends Component {
         startDate: "",
         endDate: "",
         donatedAmount: "",
-        charities: []
+        charities: [],
+        attendies:[]
       }
+    this.Payloadmaker = this.Payloadmaker.bind(this)
   }
 
   componentDidMount() {
@@ -40,13 +43,44 @@ class GroupsContainer extends Component {
         startDate: data.start_date,
         endDate: data.start_date,
         donatedAmount: data.donated_amount,
-        charities: data.charities
+        charities: data.charities,
+        attendies: data.attendies
       })
     })
   }
+  handleclick(formPayload){
+    fetch("/api/v1/memberships",{
+       credentials: 'same-origin',
+       method: "post",
+       body: JSON.stringify(formPayload),
+       headers: {
+         'Accept': 'application/json',
+         'Content-Type': 'application/json',
+       }
+     })
+     .then(response => {
+       if (response.ok) {
+         return response;
+       } else {
+         let errorMessage = `${response.status} (${response.statusText})`,
+         error = new Error(errorMessage);
+         throw(error);
+       }
+     })
+     .then(response => response.json())
+     .then(body => {
+       alert("Now following!")
+     })
+     .catch(error => console.error('Error:', error));
+   }
+   Payloadmaker(){
+     let payload={
+       group_id: this.state.id
+     }
+     this.handleclick(payload)
+   }
 
   render() {
-
     let charities = this.state.charities.map(charities => {
       return(
         <CharitiesTile
@@ -55,6 +89,13 @@ class GroupsContainer extends Component {
           name = {charities.name}
           description = {charities.description}
           url = {charities.url}
+          />
+      )
+    })
+    let attendies = this.state.attendies.map(attendy => {
+      return(
+        <AttendiesTile
+          name = {attendy.user_name}
           />
       )
     })
@@ -67,9 +108,11 @@ class GroupsContainer extends Component {
           <p>description: {this.state.description}</p>
           <p>startDate: {this.state.startDate}</p>
           <p>endDate: {this.state.endDate}</p>
-          <p>Minimum Donation Amount: {this.state.donatedAmount}%</p>
+          <p>Minimum Donation Amount: {this.state.donatedAmount}</p>
         </div>
+        <button onClick={this.Payloadmaker} >join</button>
         {charities}
+        {attendies}
       </div>
     )
   }

@@ -8,9 +8,11 @@ const GroupTile = props => {
     lng:props.lng
     }
   return(
-      <div className="large-12 medium-12 small-12 column row group-tile">
+      <div className="large-6 medium-6 small-12 column row group-tile">
       <h3><Link to={`/groups/${props.id}`}>{props.title}</Link></h3>
           Location: {props.location}
+          <br/>
+          Leader: {props.creatorName}
           <br/>
           Description: {props.description}
           <br/>
@@ -23,7 +25,7 @@ const GroupTile = props => {
           Minimum Donation: {props.donatedAmount}
           <br/>
           Charities: {props.names}
-          <div style={{ height: '100vh', width: '100%' }}>
+          <div style={{ height: '50vh', width: '50%' }}>
             <GoogleMapReact
               bootstrapURLKeys={{ key:"AIzaSyCxIGVh80hWF3b1CX7lT3o1Bk1OLjv-eAY"}}
               center={center}
