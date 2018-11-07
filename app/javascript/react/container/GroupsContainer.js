@@ -9,10 +9,11 @@ class GroupsContainer extends Component {
     center: {
       lat: 59.95,
       lng: 30.33},
-      zoom: 15,
+      zoom: 18,
       groupsList: [],
       charitiesList: []
     }
+  
   }
   componentDidMount() {
     fetch("/api/v1/groups")
@@ -52,7 +53,7 @@ class GroupsContainer extends Component {
         zoom =  {this.state.zoom}
         lat = {Number.parseFloat(group.lat)}
         lng = {Number.parseFloat(group.lng)}
-
+        creatorName = {group.creator.user_name}
       />
     )
   })
