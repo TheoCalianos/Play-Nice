@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router'
 const CharitiesTile = props => {
   return(
     <div>
@@ -9,7 +9,11 @@ const CharitiesTile = props => {
           <br></br>
           {props.description}
           <br></br>
-          {props.url}
+          <a  target="blank" href={props.url}>
+            <button>
+            More Info
+            </button>
+          </a>
       </div>
     </div>
   )

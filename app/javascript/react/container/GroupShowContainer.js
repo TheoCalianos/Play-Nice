@@ -100,9 +100,9 @@ class GroupsContainer extends Component {
       )
     })
     return(
-      <div>
+      <div Classname="row">
         <h1>meetup: {this.state.title}</h1>
-        <div>
+        <div className = "small-4 column">
           <p>location: {this.state.location}</p>
           <p>game: {this.state.game}</p>
           <p>description: {this.state.description}</p>
@@ -110,9 +110,15 @@ class GroupsContainer extends Component {
           <p>endDate: {this.state.endDate}</p>
           <p>Minimum Donation Amount: {this.state.donatedAmount}</p>
         </div>
-        <button onClick={this.Payloadmaker} >join</button>
-        {charities}
-        {attendies}
+
+        <div className = "small-4 column">
+        Supported Charities: {charities}
+        </div>
+
+        <div className = "small-4 column">
+        Attendies: {attendies}
+        <button className="join-button" onClick={this.Payloadmaker} >join</button>
+        </div>
       </div>
     )
   }
