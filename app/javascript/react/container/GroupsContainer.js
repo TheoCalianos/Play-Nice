@@ -13,7 +13,7 @@ class GroupsContainer extends Component {
       groupsList: [],
       charitiesList: []
     }
-  
+
   }
   componentDidMount() {
     fetch("/api/v1/groups")
@@ -59,9 +59,9 @@ class GroupsContainer extends Component {
   })
     return (
       <div>
-        <h1>Play Nice</h1>
-        <div className = "group-tiles">{groupsList}</div>
-        <p><Link to='group/new'> New Group</Link></p>
+        <h1 className="play-Nice">Play Nice</h1>
+        <p className="new-group"><Link to='group/new'> New Group</Link></p>
+        <div className="row group-tiles">{groupsList}</div>
       </div>
       )
     }

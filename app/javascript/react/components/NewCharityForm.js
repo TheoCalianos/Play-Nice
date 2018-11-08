@@ -115,7 +115,8 @@ class NewCharityForm extends Component {
           <label htmlFor="url">Url:</label>
           <input type="text" name="url" value={this.state.url}></input>
           <input className={`${this.state.bottonOne}`} type="submit" value="Submit" />
-          <button type="button" className={`${this.state.bottonOne}`} onClick={this.handleClick}/>
+          <button type="button" className={`${this.state.bottonOne}`} onClick={this.handleClick}>
+          Add A Charity</button>
 
           <div className={`${this.state.fieldTwo}`}>
             <h1> Add a Charity! </h1>
@@ -132,7 +133,8 @@ class NewCharityForm extends Component {
           </div>
 
           <input className={`${this.state.bottonTwo}`} type="submit" value="Submit" />
-          <button type="button" className={`${this.state.bottonTwo}`} onClick={this.handleClick}/>
+          <button type="button" className={`${this.state.bottonTwo}`} onClick={this.handleClick}>
+          Add A Charity</button>
           <div className={`${this.state.fieldThree}`}>
             <h1> Add a Charity! </h1>
 
@@ -147,7 +149,8 @@ class NewCharityForm extends Component {
           </div>
 
           <input className={`${this.state.bottonThree}`} type="submit" value="Submit" />
-          <button type="button" className={`${this.state.bottonThree}`} onClick={this.handleClick}/>
+          <button type="button" className={`${this.state.bottonThree}`} onClick={this.handleClick}>
+          Add A Charity</button>
         </form>
       </div>
     )
