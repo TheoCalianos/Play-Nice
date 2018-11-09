@@ -7,10 +7,10 @@
   visibility: hidden;
 }
 
-.botton-hidden{
-  visibility: hidden;
-}
 .field{
-  padding-left: 3rem;
-  padding-right: 3rem;
+  margin-left: 18rem;
+  width: 60%;
+}
+.test-area{
+  height: 5rem;
 }

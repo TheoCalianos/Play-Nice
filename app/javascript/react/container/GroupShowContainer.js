@@ -101,21 +101,21 @@ class GroupsContainer extends Component {
     })
     return(
       <div Classname="row">
-        <h1>meetup: {this.state.title}</h1>
+        <h1 className="play-Nice">{this.state.title}</h1>
         <div className = "small-4 column">
-          <p>location: {this.state.location}</p>
-          <p>game: {this.state.game}</p>
-          <p>description: {this.state.description}</p>
-          <p>startDate: {this.state.startDate}</p>
-          <p>endDate: {this.state.endDate}</p>
-          <p>Minimum Donation Amount: {this.state.donatedAmount}</p>
+          <p className = "info">Location: {this.state.location}</p>
+          <p className = "info">Game: {this.state.game}</p>
+          <p className = "info">Description: {this.state.description}</p>
+          <p className = "info">Start Date: {this.state.startDate}</p>
+          <p className = "info">End Date: {this.state.endDate}</p>
+          <p className = "info">Minimum Donation Amount: {this.state.donatedAmount}</p>
         </div>
 
-        <div className = "small-4 column">
+        <div className = "charities small-4 column">
         Supported Charities: {charities}
         </div>
 
-        <div className = "small-4 column">
+        <div className = "attendies small-4 column">
         Attendies: {attendies}
         <button className="join-button" onClick={this.Payloadmaker} >join</button>
         </div>

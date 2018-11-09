@@ -2,7 +2,7 @@ class Api::V1::GroupsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
-    @groups = Group.all
+    @groups = Group.all.order(:created_at).reverse_order
     render json: @groups
   end
   def show

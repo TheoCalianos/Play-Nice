@@ -88,47 +88,48 @@ class NewGroupForm extends Component {
   render() {
     return(
       <div>
-        <h1> Post A MEETUP GROUP! </h1>
+        <h1 className="play-Nice"> Post A MEETUP GROUP! </h1>
 
-        <form className="form" onChange={this.handleFormChange} onSubmit={this.handleSubmit}>
-          <div className = "field">
-          <label>Name:</label>
-          <input type="text" name="title" value={this.state.title}></input>
+        <form className="form row" onChange={this.handleFormChange} onSubmit={this.handleSubmit}>
+          <div className = "medium-11 small 11">
+            <label>Name:</label>
+            <input type="text" name="title" value={this.state.title}></input>
           </div>
 
-          <div className = "field">
-          <label>Location:</label>
-          <LocationSearchInput
-           type="text"
-           name="location"
-           handleGeoLocation={this.handleGeoLocation}
-           handleAddress={this.handleAddress}
-           location = {this.state.location}
-           />
-          </div>
-          <div className = "field">
-          <label>Game:</label>
-          <input type="text" name="game" value={this.state.game}></input>
+          <div className = "medium-11 small 11">
+            <label>Location:</label>
+            <LocationSearchInput
+            type="text"
+            name="location"
+            handleGeoLocation={this.handleGeoLocation}
+            handleAddress={this.handleAddress}
+            location = {this.state.location}
+            />
           </div>
 
-          <div className = "field">
-          <label>Description:</label>
-          <input type="text" name="description" value={this.state.description}></input>
+          <div className = "medium-11 small-11">
+            <label>Game:</label>
+            <input type="text" name="game" value={this.state.game}></input>
           </div>
 
-          <div className = "field">
-          <label>First Day:</label>
-          <input  type="date" name="start_date"  value={this.state.start_date}/>
+          <div className = "medium-11 small-11">
+            <label>Description:</label>
+            <textarea className="test-area" type="text" name="description" value={this.state.description}></textarea>
           </div>
 
-          <div className = "field">
-          <label>Last Day:</label>
-          <input type="date" name="end_date" value={this.state.end_date}/>
+          <div className = "medium-11 small-11">
+            <label>First Day:</label>
+            <input  type="date" name="start_date"  value={this.state.start_date}/>
           </div>
 
-          <div className = "field">
-          <label>Minimumn donation:</label>
-          <input type="text" name="donated_amount" value={this.state.donated_amount}></input>
+          <div className = "medium-11 small-11">
+            <label>Last Day:</label>
+            <input type="date" name="end_date" value={this.state.end_date}/>
+          </div>
+
+          <div className = "medium-11 small-11">
+            <label>Minimumn donation:</label>
+            <input type="text" name="donated_amount" value={this.state.donated_amount}></input>
           </div>
 
 

@@ -60,7 +60,7 @@ class GroupsContainer extends Component {
     return (
       <div>
         <h1 className="play-Nice">Play Nice</h1>
-        <p className="new-group"><Link to='group/new'> New Group</Link></p>
+        <p><Link to='group/new' className="new-group"> New Group</Link></p>
         <div className="row group-tiles">{groupsList}</div>
       </div>
       )

@@ -3,6 +3,7 @@ import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
 } from 'react-places-autocomplete';
+
 class LocationSearchInput extends React.Component {
   constructor(props) {
     super(props);
@@ -30,9 +31,8 @@ class LocationSearchInput extends React.Component {
 
   render() {
     return (
-    <div className="column large-4">
+    <div className="">
     <label>
-    Add a location to your profile
       <PlacesAutocomplete
         value={this.state.address}
         onChange={this.handleChange}
