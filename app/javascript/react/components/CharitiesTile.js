@@ -9,8 +9,8 @@ const CharitiesTile = props => {
           <br></br>
           {props.description}
           <br></br>
-          <a  target="blank" href={props.url}>
-            <button>
+          <a target="blank" href={props.url}>
+            <button className="join-button">
             More Info
             </button>
           </a>

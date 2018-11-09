@@ -25,7 +25,7 @@ const GroupTile = props => {
             <br/>
             Charities: {props.names}
           </div>
-          <div style={{ height: '50vh', width: '50%' }} className="medium-6 small-12 column" >
+          <div style={{ height: '50vh', width: '50%' }} className="medium-6 small-12 column map" >
             <GoogleMapReact
               bootstrapURLKeys={{ key:"AIzaSyCxIGVh80hWF3b1CX7lT3o1Bk1OLjv-eAY"}}
               center={center}

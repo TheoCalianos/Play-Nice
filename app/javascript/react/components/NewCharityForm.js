@@ -102,55 +102,59 @@ class NewCharityForm extends Component {
   render() {
     return(
       <div>
-        <h1> Add a Charity! </h1>
+        <h1 className="play-Nice"> Add a Charity! </h1>
 
-        <form className="form" onChange={this.handleFormChange} onSubmit={this.handleSubmit}>
+        <form className="form row" onChange={this.handleFormChange} onSubmit={this.handleSubmit}>
 
           <label htmlFor="name">Name:</label>
           <input type="text" name="name" value={this.state.name}></input>
 
-          <label htmlFor="description">description:</label>
+          <label htmlFor="description">Description:</label>
           <input type="text" name="description" value={this.state.description}></input>
 
-          <label htmlFor="url">Url:</label>
+          <label htmlFor="url">URL:</label>
           <input type="text" name="url" value={this.state.url}></input>
           <input className={`${this.state.bottonOne}`} type="submit" value="Submit" />
           <button type="button" className={`${this.state.bottonOne}`} onClick={this.handleClick}>
           Add A Charity</button>
 
-          <div className={`${this.state.fieldTwo}`}>
+          <div className={`${this.state.fieldTwo} medium-11 small-11 column`}>
             <h1> Add a Charity! </h1>
 
 
             <label htmlFor="nameTwo">Name:</label>
             <input type="text" name="nameTwo" value={this.state.nameTwo}></input>
 
-            <label htmlFor="descriptionTwo">description:</label>
+            <label htmlFor="descriptionTwo">Description:</label>
             <input type="text" name="descriptionTwo" value={this.state.descriptionTwo}></input>
 
-            <label htmlFor="urTwol">Url:</label>
+            <label htmlFor="urTwol">URL:</label>
             <input type="text" name="urlTwo" value={this.state.urlTwo}></input>
           </div>
 
-          <input className={`${this.state.bottonTwo}`} type="submit" value="Submit" />
-          <button type="button" className={`${this.state.bottonTwo}`} onClick={this.handleClick}>
-          Add A Charity</button>
+          <input className={`${this.state.bottonTwo} `} type="submit" value="Submit" />
+
+          <button
+            type="button"
+            className={`${this.state.bottonTwo}`}
+            onClick={this.handleClick}>
+            Add A Charity
+          </button>
+
           <div className={`${this.state.fieldThree}`}>
             <h1> Add a Charity! </h1>
 
             <label htmlFor="nameThree">Name:</label>
             <input type="text" name="nameThree" value={this.state.nameThree}></input>
 
-            <label htmlFor="descriptionThree">description:</label>
+            <label htmlFor="descriptionThree">Description:</label>
             <input type="text" name="descriptionThree" value={this.state.descriptionThree}></input>
 
-            <label htmlFor="urlThree">Url:</label>
+            <label htmlFor="urlThree">URL:</label>
             <input type="text" name="urlThree" value={this.state.urlThree}></input>
           </div>
 
           <input className={`${this.state.bottonThree}`} type="submit" value="Submit" />
-          <button type="button" className={`${this.state.bottonThree}`} onClick={this.handleClick}>
-          Add A Charity</button>
         </form>
       </div>
     )

@@ -1,17 +1,28 @@
 body{
   background-color: #fffff0;
 }
+
 .group-tile {
   border: 1px solid black;
   border-radius: 2rem;
   padding-left: 2rem;
+  margin-right: 2rem;
+  max-width: 30rem;
+  overflow: hidden;
+  max-height: 25rem;
+  margin-top: 2.3rem;
 }
 .play-Nice{
+  margin-right: 2rem;
   text-align: center;
   font-size: 4rem;
   font-family: 'Coming Soon', cursive;
   color: #fe45d9;
 }
-.new-group{
-  text-align: center;
+
+.group-tiles{
+  max-width: 65rem;
+}
+.map{
+  margin-bottom: 1rem;
 }

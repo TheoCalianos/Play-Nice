@@ -39,3 +39,24 @@
 	position:relative;
 	top:1px;
 }
+.info{
+  font-size: 1.5rem;
+  border: 1px solid black;
+  border-radius: 2rem;
+  padding-left: 2rem;
+}
+.charities{
+  font-size: 1.5rem;
+  border: 1px solid black;
+  border-radius: 2rem;
+  padding-left: 2rem;
+}
+.attendies{
+  max-width: 20rem;
+  margin-left: 1rem;
+  margin-right: 3rem;
+  font-size: 1.5rem;
+  border: 1px solid black;
+  border-radius: 2rem;
+  padding-left: 2rem;
+}
