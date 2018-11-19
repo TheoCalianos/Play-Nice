@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 2018_11_06_160549) do
   end
 
   create_table "memberships", force: :cascade do |t|
-    t.bigint "group_id"
-    t.bigint "user_id"
+    t.bigint "group_id", null: false
+    t.bigint "user_id", null: false
     t.index ["group_id"], name: "index_memberships_on_group_id"
     t.index ["user_id"], name: "index_memberships_on_user_id"
   end

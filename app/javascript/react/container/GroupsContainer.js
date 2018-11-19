@@ -6,10 +6,6 @@ class GroupsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    center: {
-      lat: 59.95,
-      lng: 30.33},
-      zoom: 18,
       groupsList: [],
       charitiesList: []
     }

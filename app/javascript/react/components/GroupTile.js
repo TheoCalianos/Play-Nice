@@ -29,7 +29,7 @@ const GroupTile = props => {
             <GoogleMapReact
               bootstrapURLKeys={{ key:"AIzaSyCxIGVh80hWF3b1CX7lT3o1Bk1OLjv-eAY"}}
               center={center}
-              zoom={props.zoom}>
+              zoom={18}>
               </GoogleMapReact>
           </div>
       </div>

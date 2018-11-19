@@ -90,6 +90,7 @@ class NewCharityForm extends Component {
         { fieldTwo: "feild-show ",
           bottonOne: "botton-hidden",
           bottonTwo: "botton-show"}
+
     )}
     else{
       this.setState(
@@ -118,7 +119,7 @@ class NewCharityForm extends Component {
           <button type="button" className={`${this.state.bottonOne}`} onClick={this.handleClick}>
           Add A Charity</button>
 
-          <div className={`${this.state.fieldTwo} medium-11 small-11 column`}>
+          <div className={`${this.state.fieldTwo}`}>
             <h1> Add a Charity! </h1>
 
 
@@ -132,7 +133,7 @@ class NewCharityForm extends Component {
             <input type="text" name="urlTwo" value={this.state.urlTwo}></input>
           </div>
 
-          <input className={`${this.state.bottonTwo} `} type="submit" value="Submit" />
+          <input className={`${this.state.bottonTwo}`} type="submit" value="Submit" />
 
           <button
             type="button"
