@@ -13,7 +13,7 @@ class Api::V1::CharitiesController < ApplicationController
     groupid = Group.last.id
     newCharity = Charity.new(charity_params)
     if newCharity.save
-      Sponser.create(group_id: groupid, charity_id: Charity.last.id)
+      Sponser.create(group_id: groupid, charity_id: newCharity.id)
       render json: newCharity
     else
       render json: { errors: newCharity.errors.full_messages }, status: :unprocessable_entity

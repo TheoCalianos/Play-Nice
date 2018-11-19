@@ -11,7 +11,7 @@ class Api::V1::GroupsController < ApplicationController
   def create
     newGroup = Group.new(group_params)
     if newGroup.save
-      Membership.create(group_id: Group.last.id, user_id: current_user.id)
+      Membership.create(group_id: newGroup.id, user_id: current_user.id)
       render json: newGroup
     else
       render json: { errors: newGroup.errors.full_messages }, status: :unprocessable_entity
