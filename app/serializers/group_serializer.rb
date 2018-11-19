@@ -1,5 +1,5 @@
 class GroupSerializer < ActiveModel::Serializer
-  attributes :id, :location, :title, :description, :game, :start_date, :end_date, :donated_amount, :charity_name, :lat, :lng, :creator, :attendies
+  attributes :id, :location, :title, :description, :game, :start_date, :end_date, :donated_amount, :charity_name, :lat, :lng, :attendies
   has_many :charities
   def charity_name
     names = []
@@ -7,10 +7,6 @@ class GroupSerializer < ActiveModel::Serializer
       names << charity.name
     end
     return names
-  end
-  def creator
-    creator = object.users.first
-    return creator
   end
   def attendies
     attendies = object.users

@@ -13,8 +13,6 @@ const GroupTile = props => {
         <div className="medium-6 small-12 column">
             Location: {props.location}
             <br/>
-            Leader: {props.creatorName}
-            <br/>
             Game: {props.game}
             <br/>
             Start Date: {props.startDate}
