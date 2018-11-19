@@ -49,7 +49,6 @@ class GroupsContainer extends Component {
         zoom =  {this.state.zoom}
         lat = {Number.parseFloat(group.lat)}
         lng = {Number.parseFloat(group.lng)}
-        creatorName = {group.creator.user_name}
       />
     )
   })

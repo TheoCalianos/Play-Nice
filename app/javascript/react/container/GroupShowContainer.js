@@ -93,14 +93,16 @@ class GroupsContainer extends Component {
       )
     })
     let attendies = this.state.attendies.map(attendy => {
+      debugger;
       return(
         <AttendiesTile
           name = {attendy.user_name}
+          key = {attendy.id}
           />
       )
     })
     return(
-      <div Classname="row">
+      <div>
         <h1 className="play-Nice">{this.state.title}</h1>
         <div className = "small-4 column">
           <p className = "info">Location: {this.state.location}</p>
