@@ -23,7 +23,8 @@
     <section class="top-bar-section">
       <ul class="right">
         <%- if current_user -%>
-        l <li class="user-name"><%="#{current_user.user_name}"%></li>
+        <% id = current_user.id %>
+          <li class="user-name"> <%= "#{current_user.user_name}"%></li>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>
           <li><%= link_to 'Sign Up', new_user_registration_path %></li>
