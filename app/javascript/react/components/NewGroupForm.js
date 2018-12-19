@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
-import Calendar from 'react-calendar';
 import LocationSearchInput from './LocationSearchInput'
 import PlacesAutocomplete, {
   geocodeByAddress,
