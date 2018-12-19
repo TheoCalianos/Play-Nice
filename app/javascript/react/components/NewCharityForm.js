@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
-import Calendar from 'react-calendar';
+
 
 class NewCharityForm extends Component {
   constructor(props) {

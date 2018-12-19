@@ -1,7 +1,7 @@
 import GroupsContianer from '../../app/javascript/react/container/GroupsContainer'
 import GroupTile from '../../app/javascript/react/components/GroupTile'
 
-describe('BeersContainer', () => {
+describe('GroupsContainer', () => {
   let wrapper;
   let data = [{
     id: 1,
@@ -18,7 +18,7 @@ describe('BeersContainer', () => {
   }]
   beforeEach(() => {
     wrapper = mount(
-      <BeerTile
+      <GroupTile
         id = {data[0].id}
         location = {data[0].location}
         title = {data[0].title}
