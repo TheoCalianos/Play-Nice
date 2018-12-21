@@ -32,13 +32,15 @@ class UserShowContainer extends Component {
       return(
         <UserGroupTile
           key = {group.id}
+          id = {group.id}
           title = {group.title}
         />
       )
     })
     return(
       <div>
-        {Usergroups}
+        <h3 className = "play-Nice"> Your Past Groups!</h3>
+        <h5 className="row">{Usergroups}</h5>
       </div>
     )
     }

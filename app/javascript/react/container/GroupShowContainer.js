@@ -93,7 +93,6 @@ class GroupsContainer extends Component {
       )
     })
     let attendies = this.state.attendies.map(attendy => {
-      debugger;
       return(
         <AttendiesTile
           name = {attendy.user_name}
