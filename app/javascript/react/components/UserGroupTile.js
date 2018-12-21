@@ -1,11 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router'
 
 const AttendiesTile = props => {
   return(
     <div>
-      <div className="attendies-tile">
+      <div className= "user-tile medium-12 small-12 column">
           <br></br>
-          {props.title}
+          <h3 className="group-title"><Link to={`/groups/${props.id}`}>{props.title}</Link></h3>
+
       </div>
     </div>
   )
